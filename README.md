@@ -14,7 +14,7 @@
     <img src="./react-frontend/src/assets/logo.svg" alt="ML Plotter logo" height="40" />
   </a>
   <p align="center">
-    Work in progress. Come back later
+    ML Plotter
     <br />
     <a href="https://github.com/ml-buddy/ml-plotter"><strong>Explore the docs »</strong></a>
     <br />
