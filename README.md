@@ -1,3 +1,4 @@
+    <a href="https://github.com/ml-buddy/ml-plotter"><strong>Explore the docs »</strong></a>
 <div id="top"></div>
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -34,6 +35,7 @@ Not ready yet, please come back later...
 ### Built With
 
 - [React](https://reactjs.org/docs/getting-started.html)
+- [Ionic] (https://ionicframework.com/docs/react)
 
 
 ## License
