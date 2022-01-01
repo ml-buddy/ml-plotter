@@ -1,2 +1,6 @@
 @import 'index.css';
 
+.testClass {
+    @apply flex bg-venice-400 text-allports-50 mx-20 p-4 my-2;
+}
+

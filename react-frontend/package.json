@@ -10,6 +10,7 @@
     "airbnb-browser-shims": "^3.3.0",
     "axios": "^0.24.0",
     "babel-preset-airbnb": "^5.0.0",
+    "d3": "^7.2.1",
     "eslint-config-airbnb": "^19.0.2",
     "prettier": "prettier-airbnb-config",
     "prettier-airbnb-config": "^1.0.0",
