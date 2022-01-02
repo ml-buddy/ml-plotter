@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import { AiOutlineAreaChart, AiFillSetting, FaGraduationCap } from "react-icons/all";
 import { Link } from 'react-router-dom';
-import { AiOutlineAreaChart, AiFillSetting, AiFillBook } from "react-icons/all";
 
 function SideNavbar({
   showMobile,
@@ -21,24 +21,24 @@ function SideNavbar({
         </div>
 
         <section className="flex px-2 lg:px-0 transition duration-150 ease-in-out h-full">
-          <ul className="flex flex-col py-3 mx-2">
-            <li className="text-mirage-400 py-1 mr-4">
+          <ul className="flex flex-col ml-1 py-3">
+            <li className="text-mirage-400 py-1">
               <Link className="text-mirage-400 flex items-center" to="/">
                 <AiOutlineAreaChart size={iconSize} />
-                 Charting
+                 <span className={showMobile ? 'mr-auto ml-2' : 'hidden invisible'}>Charting</span>
               </Link>
             </li>
 
-            <li className="text-mirage-400 py-1 mr-4">
+            <li className="text-mirage-400 py-1 w-full">
               <Link className="text-mirage-400 flex items-center" to="/articles">
-                <AiFillBook size={iconSize} className="pr-2" />
-                Learn
+                <FaGraduationCap size={iconSize} />
+                <span className={showMobile ? 'mr-auto ml-2' : 'hidden invisible'}>Learn</span>
               </Link>
             </li>
-            <li className="text-mirage-400 py-1 mr-4 mt-auto">
+            <li className="text-mirage-400 py-1 mt-auto">
               <Link className="text-mirage-400 flex items-center" to="/">
-                <AiFillSetting size={iconSize} className="pr-2" />
-                Settings
+                <AiFillSetting size={iconSize} />
+                <span className={showMobile ? 'mr-auto ml-2' : 'hidden invisible'}>Settings</span>
               </Link>
             </li>
           </ul>
