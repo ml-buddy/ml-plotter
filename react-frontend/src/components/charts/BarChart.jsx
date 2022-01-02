@@ -3,41 +3,36 @@ import * as d3 from 'd3';
 
 function BarChart() {
   let containerRef = useRef()
-  const initData = [133, 14541, 131, 543, 42154, 1245]
-  const width = 20
+  const initData = [100, 200, 300, 400, 500];
+  const dimensions = {width: '1200px', height: '600px'}
 
   const [barData, updateData] = useState(initData)
 
   useEffect(() => {
-    const update = d3.select(containerRef).selectAll('circle').data(barData);
+    let svg = d3.select(containerRef)
+      .append('svg')
+      .attr('width', dimensions.width)
+      .attr('height', dimensions.height);
 
-    update
-      .enter()
-      .append('circle')
-      .attr('r', (d) => d)
-      .attr('cx', (_, i) => width * (i + 1))
-      .attr('cy', () => Math.random() * 100)
-      .attr('stroke', (_, i) => (i % 2 === 0 ? '#f80' : '#aaf'))
-      .attr('fill', (_, i) => (i % 2 === 0 ? 'orange' : '#44f'));
+    let height = 50;
 
-    update
-      .attr('r', (d) => d)
-      .attr('cx', (_, i) => width * (i + 1))
-      .attr('cy', () => Math.random() * 100)
-      .attr('stroke', (_, i) => (i % 2 === 0 ? '#f80' : '#aaf'))
-      .attr('fill', (_, i) => (i % 2 === 0 ? 'orange' : '#44f'));
-
-    update.exit().remove();
-    const test = d3.select(containerRef).append("p").text("Hello from D3");
-  }, [])
+    let rect_width = 95;
+    svg.selectAll('rect')
+      .data(barData)
+        .enter()
+        .append('rect')
+        .attr('x', (d, i) => 5 + i*(rect_width + 5))
+        .attr('y', 0)
+        .attr('width', rect_width)
+        .attr('height', d => `${d}px`)
+        .attr('fill', 'teal');
+  }, [barData])
 
   return (
     <React.Fragment>
-      <svg ref={(container) => {containerRef = container}}>
-        <g transform="translate(20, 100)" />
-      </svg>
-      {console.log(containerRef)}
+      <div ref={(container) => {containerRef = container}}>
 
+      </div>
     </React.Fragment>
   )
 }
